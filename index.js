@@ -26,3 +26,21 @@ function getDiceHtml(diceCount) {
     }).join('')
 }
 
+function renderCharacter(data) {
+    const { elementId, name, avatar, health, diceCount } = data;
+    const diceHtml = getDiceHtml(diceCount)
+
+    document.getElementById(elementId).innerHTML =
+        `<div class="character-card">
+            <h4 class="name"> ${name} </h4>
+            <img class="avatar" src="${avatar}" />
+            <div class="health">health: <b> ${health} </b></div>
+            <div class="dice-container">    
+                ${diceHtml}
+            </div>
+        </div>`;
+}
+
+renderCharacter(hero);
+renderCharacter(monster);
+
