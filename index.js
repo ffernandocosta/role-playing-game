@@ -47,9 +47,11 @@ function Character(data) {
 
 const wizard = new Character(hero)
 const orc = new Character(monster)
-wizard.getCharacterHtml()
-orc.getCharacterHtml()
 
-renderCharacter(hero);
-renderCharacter(monster);
+function render(){
+    document.getElementById(wizard.elementId).innerHTML = wizard.getCharacterHtml()
+    document.getElementById(orc.elementId).innerHTML = orc.getCharacterHtml()   
+}
+
+render()
 
