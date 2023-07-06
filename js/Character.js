@@ -8,7 +8,7 @@ function Character(data) {
     this.getDiceHtml = function() {
         this.currentDiceScore = getDiceRollArray(this.diceCount)
         
-        this.diceArray = this.currentDiceScore.map((map) => 
+        this.diceArray = this.currentDiceScore.map((num) => 
             `<div class="dice">${num}</div>`).join('')
     }
 
