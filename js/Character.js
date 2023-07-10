@@ -1,4 +1,4 @@
-import { getDiceRollArray, getDicePlaceholderHtml, getPercentage } from "./utils.js"
+import { getDiceRollArray, getDicePlaceholderHtml, getPercentage, hasDuplicates } from "./utils.js"
 
 class Character {
     constructor(data){
@@ -36,6 +36,12 @@ class Character {
         }
         // Checking if the health is less than or equal to 0
         // If so, setting the dead property to true and the health property to 0
+
+        this.moreHealth = hasDuplicates(this.currentDiceScore);
+         
+        if (this.moreHealth){
+            this.health += this.moreHealth
+        }
     }
 
     getHealthBarHtml() {
@@ -54,7 +60,7 @@ class Character {
     }
 
     getCharacterHtml() {
-        const { elementId, name, avatar, health, diceCount, diceHtml } = this;
+        const { elementId, name, avatar, health, diceCount, diceHtml, moreHealth } = this;
         // Destructuring the properties of the instance into individual variables
         
         const healthBar = this.getHealthBarHtml();
