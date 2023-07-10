@@ -10,6 +10,10 @@ html, body {
     font-family: 'MedievalSharp', cursive;
 }
 
+p {
+    margin: 0;
+}
+
 main {
     display:flex;
     flex-direction: column;
@@ -20,9 +24,8 @@ main {
 @media(min-width:550px){
    main {
         flex-direction: row;
-        margin:6vh 5vw;
+        margin: 5rem;
         justify-content: center;
-        width:86vw;
         gap: 2rem;
     } 
 }
@@ -30,9 +33,8 @@ main {
 .character-card {
     height:14rem;
     margin-top: .5rem;
-    width:94vw;
     max-width: 230px;
-    padding: 1vh 1vw;
+    padding: 1rem;
     font-size: 1.6rem;
     color: white;
     border-radius: 14px;
@@ -48,13 +50,13 @@ main {
 @media(min-width:550px){
     .character-card {
         border: 0.2rem solid #000721;
-        height:26rem;
-        width:37vw;
+        height: 26rem;
+        width: 500px;
     }
 }
 
 .name {
-    margin: 1vh 0;
+    margin: 1rem 0;
     width:100%;
     letter-spacing: 0.08em;
     font-size: 90%;
@@ -62,13 +64,13 @@ main {
 
 @media(min-width:550px){
     .name {
-    margin: 2vh 0;
+    margin: 0.5rem 0;
     font-size: 100%;
 }
 }
 
 .avatar {
-    width: 15vh;
+    width: 200px;
     border: 2px solid #000721;
     max-width:100%;
     opacity: 0.8;
@@ -76,36 +78,44 @@ main {
     background-color: rgba(0, 7, 33, 0.8);
 }
 
-@media(min-width:550px){
-    .avatar {
-        width: 25vh;
-    }
-}
-
 .health {
     font-size:1.1rem;
     font-weight: normal;
-    width:90%;
+    width: 90%;
     text-align: left;
-    margin: 1vh 5%;
+    margin: 1rem 5%;
     color:#ccc;
-    letter-spacing: 0.03em
+    letter-spacing: 0.03em;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    gap: 0.3rem;
 }
 
 @media(min-width:550px){
     .health {
-        margin: 2vh 5%;
+        margin: 0.5rem 5%;
     }
 }
 
-.health b {
+.health-points {
     font-weight: bold;
     color:#fff;
 }
 
+.health-gained {
+    color: green;
+    font-weight: bold;
+}
+
+.damage-taken {
+    color: red;
+    font-weight: bold;
+}
+
 .health-bar-outer {
     background: #171217;
-    height: 1vh;
+    height: 5px;
     width:90%;
     margin: 0 5%;
     border-radius: 2px;
@@ -115,6 +125,7 @@ main {
     background: #466d34;
     height: 100%;
     border-radius: 2px;
+    transition: width 0.3s ease-in-out;
 }
 
 .health-bar-outer .health-bar-inner.danger {
@@ -123,7 +134,7 @@ main {
 
 .dice-container {
     width:100%;
-    height: 20%;
+    height: 1%;
     position: absolute;
     bottom:0;
     left:0px;
@@ -137,27 +148,27 @@ main {
 
 @media(min-width:550px){
     .dice-container {
-        height: 30%;
+        height: 25%;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
     }
 }
 
 .dice, .placeholder-dice{
-    height:5.5vh;
-    width:5.5vh;
+    height: 1rem;
+    width: 1rem;
     background: #fff;   
     border-radius: 5px;
     border:1px solid #666;
     color:#000721;
     text-align: center;
-    line-height: 6vh;
+    line-height: 1.5;
 }
 
 @media(min-width:550px){
 .dice-container .dice, .dice-container .placeholder-dice{
-    height:10vh;
-    width:10vh;
+    height: 4rem;
+    width: 4rem;
     line-height: 10.5vh;
 }
 }
@@ -172,8 +183,8 @@ button {
     background-color: #fcc02a;
     border: 2px solid #963404;
     outline: none;
-    padding-left:5vw;
-    padding-right:5vw;
+    padding-left: 3rem;
+    padding-right: 3rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
