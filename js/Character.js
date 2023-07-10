@@ -24,10 +24,18 @@ class Character {
     }
 
     takeDamage(attackScoreArray) {
-        const totalAttackScore = attackScoreArray.reduce((total, currentNum) => total + currentNum)
+        this.totalAttackScore = attackScoreArray.reduce((total, currentNum) => total + currentNum)
         // Calculating the total attack score by summing up all the numbers in the attackScoreArray
         
-        this.health -= totalAttackScore
+        this.moreHealth = hasDuplicates(this.currentDiceScore);
+        // assing 'moreHealth' property to hasDuplicates array
+
+        // if 'moreHealth' is truthy, 'health' gets increased 
+        if (this.moreHealth){
+            this.health += this.moreHealth
+        }
+
+        this.health -= this.totalAttackScore
         // Subtracting the totalAttackScore from the health property
         
         if (this.health <= 0){
@@ -36,12 +44,6 @@ class Character {
         }
         // Checking if the health is less than or equal to 0
         // If so, setting the dead property to true and the health property to 0
-
-        this.moreHealth = hasDuplicates(this.currentDiceScore);
-         
-        if (this.moreHealth){
-            this.health += this.moreHealth
-        }
     }
 
     getHealthBarHtml() {
@@ -60,7 +62,7 @@ class Character {
     }
 
     getCharacterHtml() {
-        const { elementId, name, avatar, health, diceCount, diceHtml, moreHealth } = this;
+        const { elementId, name, avatar, health, diceCount, diceHtml, moreHealth, totalAttackScore } = this;
         // Destructuring the properties of the instance into individual variables
         
         const healthBar = this.getHealthBarHtml();
@@ -70,7 +72,10 @@ class Character {
             <div class="character-card">
                 <h4 class="name"> ${name} </h4>
                 <img class="avatar" src="${avatar}" />
-                <div class="health">health: <b> ${health} </b></div>
+                <div class="health">health: <b class="health-points"> ${health} </b>
+                <p class="health-gained health-damage-taken"> ${moreHealth ? '+' + moreHealth : ''} </p>
+                <p class="damage-taken health-damage-taken"> ${totalAttackScore ? '-' + totalAttackScore  : ''} </p>
+                </div>
                 ${healthBar}
                 <div class="dice-container">
                     ${diceHtml}
