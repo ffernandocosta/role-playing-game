@@ -24,11 +24,28 @@ function getDicePlaceholderHtml(diceCount){
     // Returning the resulting HTML string representing the dice placeholders.
 }
 
+function hasDuplicates(currentDiceScore) {
+    const duplicates = [];
+    const trackDuplicate = {};
+
+    for(let i = 0; i < currentDiceScore.length; i++){
+        let currentDice = currentDiceScore[i]
+
+        if(trackDuplicate[currentDice] === true){
+            duplicates.push(currentDice);
+        }
+        else {
+            trackDuplicate[currentDice] = true;
+        }
+    }
+    return duplicates.length ? duplicates.reduce((total, currentDuplicate) => total + currentDuplicate) : false;
+}
+
 const getPercentage = (remainingHealth, maximumHealth) => (100 * remainingHealth) / maximumHealth;
 // A arrow function that calculates the percentage based on the remainingHealth and maximumHealth parameters.
 // It multiplies the remainingHealth by 100 and then divides it by the maximumHealth.
 // The result is the calculated percentage.
 
-export {getDiceRollArray, getDicePlaceholderHtml, getPercentage};
+export {getDiceRollArray, getDicePlaceholderHtml, getPercentage, hasDuplicates};
 // Exporting the getDiceRollArray, getDicePlaceholderHtml, and getPercentage functions
 // to make them available for use in other modules.
