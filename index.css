@@ -125,7 +125,6 @@ main {
     background: #466d34;
     height: 100%;
     border-radius: 2px;
-    transition: width 0.3s ease-in-out;
 }
 
 .health-bar-outer .health-bar-inner.danger {
@@ -162,14 +161,13 @@ main {
     border:1px solid #666;
     color:#000721;
     text-align: center;
-    line-height: 1.5;
+    line-height: 2.5;
 }
 
 @media(min-width:550px){
 .dice-container .dice, .dice-container .placeholder-dice{
     height: 4rem;
     width: 4rem;
-    line-height: 10.5vh;
 }
 }
 
@@ -211,4 +209,17 @@ button:focus { outline: 0 }
 
 .end-emoji{
     font-size: 80px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 11px; text-align: center; margin-top: 4rem;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    color: gray;
 }
