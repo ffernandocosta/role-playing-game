@@ -29,15 +29,11 @@ function hasDuplicates(currentDiceScore) {
     const trackDuplicate = {};
 
     for(let i = 0; i < currentDiceScore.length; i++){
-        let currentDice = currentDiceScore[i]
+        const currentDice = currentDiceScore[i]
 
-        if(trackDuplicate[currentDice] === true){
-            duplicates.push(currentDice);
-        }
-        else {
-            trackDuplicate[currentDice] = true;
-        }
+        trackDuplicate[currentDice] ? duplicates.push(currentDice) : trackDuplicate[currentDice] = true;
     }
+
     return duplicates.length ? duplicates.reduce((total, currentDuplicate) => total + currentDuplicate) : false;
 }
 
