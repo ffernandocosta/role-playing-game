@@ -28,7 +28,7 @@ Os usuários devem ser capazes de:
 
 ### Screenshot
 
-![Screenshot]()
+![Screenshot](/images/screenshot.png)
 
 ### Links
 
@@ -109,12 +109,6 @@ This is a project I built after module 7 of [Scrimba's](scrimba.com) JavaScript 
 
 Users should be able to:
 
-- Clickar no botão 'Attack' e rolar os dados
-- Ver quanto de dano tirou do monstro e quanto de dano sofreu
-- Ver quanto de vida ganhou quase tire dados iguais
-- Ver a barra de vida ficar mais baixa enquanto toma dano e caso esteja abaixo de 20% de vida, a barra fica vermelha
-- Ver a mensagem de fim de jogo correta de acordo com o resultado final de quem foi vencedor
-
 - Click on 'Attack' button and roll the dices
 - See how much damage you dealt/took
 - See how many gained health points if rolled dices had duplicates
@@ -123,7 +117,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot]()
+![Screenshot](/images/screenshot.png)
 
 ### Links
 
