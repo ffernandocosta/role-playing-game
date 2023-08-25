@@ -29,7 +29,7 @@ function hasDuplicates(currentDiceScore) {
     const trackDuplicate = {};
 
     for(let i = 0; i < currentDiceScore.length; i++){
-        const currentDice = currentDiceScore[i]
+        const currentDice = currentDiceScore[i];
 
         trackDuplicate[currentDice] ? duplicates.push(currentDice) : trackDuplicate[currentDice] = true;
     }
